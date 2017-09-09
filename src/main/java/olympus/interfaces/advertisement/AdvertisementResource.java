@@ -1,8 +1,7 @@
-package olympus.interfaces.ticket;
+package olympus.interfaces.advertisement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,27 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 import olympus.domain.advertisement.Advertisement;
 import olympus.domain.advertisement.service.AdvertisementRequirementsService;
-import olympus.domain.ticket.service.TicketCreatorService;
 
 @RestController
-@RequestMapping("/ticket")
-public class TicketResource {
+@RequestMapping("/advertisement")
+public class AdvertisementResource {
 
-	private TicketCreatorService creatorService;
+	private AdvertisementRequirementsService advertisementRequirementsService;
 
 	@Autowired
-	public TicketResource(TicketCreatorService creatorService) {
-		this.creatorService = creatorService;
+	public AdvertisementResource(AdvertisementRequirementsService advertisementRequirementsService) {
+		this.advertisementRequirementsService = advertisementRequirementsService;
 	}
 
 	@GetMapping
-	@RequestMapping(method = RequestMethod.POST, path = "/ticket")
-	public TicketCreatorService create() {
+	@RequestMapping(method = RequestMethod.GET, path = "/advertisement")
+	public AdvertisementRequirementsService getBalanceBy() {
+
 		return null;
 	}
 
 	@PostMapping
-	public TicketCreatorService insert() {
+	public AdvertisementRequirementsService insert(@RequestBody Advertisement advertisement) {
+		
 		return null;
 	}
 }

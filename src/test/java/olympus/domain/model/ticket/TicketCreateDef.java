@@ -9,10 +9,9 @@ import org.mockito.internal.verification.VerificationModeFactory;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import olympus.application.advertisement.AccountCreatorServiceImpl;
 import olympus.application.ticket.TicketCreatorServiceImpl;
 import olympus.domain.advertisement.Advertisement;
-import olympus.domain.advertisement.repository.AccountRepository;
+import olympus.domain.advertisement.repository.AdvertisementRequirementRepository;
 import olympus.domain.ticket.Ticket;
 import olympus.domain.ticket.repository.TicketCreatorRepository;
 

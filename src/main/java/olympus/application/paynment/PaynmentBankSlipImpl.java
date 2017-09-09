@@ -3,7 +3,7 @@ package olympus.application.paynment;
 import java.util.List;
 
 import olympus.domain.advertisement.Advertisement;
-import olympus.domain.advertisement.repository.AccountRepository;
+import olympus.domain.advertisement.repository.AdvertisementRequirementRepository;
 import olympus.domain.paynment.InvalidPaynmentException;
 import olympus.domain.paynment.Paynment;
 import olympus.domain.paynment.repository.PaynmentRepository;

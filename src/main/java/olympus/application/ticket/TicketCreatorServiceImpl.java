@@ -1,6 +1,6 @@
 package olympus.application.ticket;
 
-import olympus.domain.advertisement.InvalidAccountNameException;
+import olympus.domain.ticket.InvalidTicketException;
 import olympus.domain.ticket.Ticket;
 import olympus.domain.ticket.repository.TicketCreatorRepository;
 import olympus.domain.ticket.service.TicketCreatorService;
@@ -14,7 +14,7 @@ public class TicketCreatorServiceImpl implements TicketCreatorService {
 	}
 
 	@Override
-	public Ticket create(Ticket ticket) throws InvalidAccountNameException {
+	public Ticket create(Ticket ticket) throws InvalidTicketException {
 		// TODO Auto-generated method stub
 		return null;
 	}

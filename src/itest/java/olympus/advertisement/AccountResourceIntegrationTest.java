@@ -1,4 +1,4 @@
-package personalfinance.account;
+package olympus.advertisement;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
@@ -26,7 +26,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import olympus.application.main.Startup;
 import olympus.domain.advertisement.Advertisement;
-import olympus.domain.advertisement.repository.AccountRepository;
+import olympus.domain.advertisement.repository.AdvertisementRequirementRepository;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -53,7 +53,7 @@ public class AccountResourceIntegrationTest {
 
     @Autowired
     
-    private AccountRepository accountRepository;
+    private AdvertisementRequirementRepository advertisementRequirementRepository;
 
     @Autowired
     void setConverters(HttpMessageConverter<?>[] converters) {
@@ -70,7 +70,7 @@ public class AccountResourceIntegrationTest {
     public void setup() throws Exception {
         this.mockMvc = webAppContextSetup(webApplicationContext).build();
 
-        this.accountRepository.saveAndFlush(new Advertisement(1L, "Principal"));
+        this.advertisementRequirementRepository.saveAndFlush(new Advertisement());
     }
     
 	@Test
@@ -91,7 +91,7 @@ public class AccountResourceIntegrationTest {
 	
 	@Test
     public void createAccount() throws Exception {
-        String json = json(new Advertisement(1l, "Principal"));
+        String json = json(new Advertisement());
 
         this.mockMvc.perform(post("/account/create")
                 .contentType(contentType)

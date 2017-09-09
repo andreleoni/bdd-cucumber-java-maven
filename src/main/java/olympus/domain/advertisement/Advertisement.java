@@ -8,33 +8,33 @@ import javax.persistence.Id;
 public class Advertisement {
 
 	@Id
-	private Long number;
+	private Long advertisementId;
 
 	@Column
-	private String name;
+	private Long discount;
 
 	public Advertisement() {}
 
-	public Advertisement(Long number, String name) {
+	public Advertisement(Long advertisementId, Long discount) {
 		super();
-		this.number = number;
-		this.name = name;
+		this.advertisementId = advertisementId;
+		this.discount = discount;
 	}
 
-	public Long getNumber() {
-		return number;
+	public Long getAdvertisementId() {
+		return advertisementId;
 	}
 
-	public void setNumber(Long number) {
-		this.number = number;
+	public void setAdvertisementId(Long advertisementId) {
+		this.advertisementId = advertisementId;
 	}
 
-	public String getName() {
-		return name;
+	public Long getDiscount() {
+		return discount;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setDiscount(Long discount) {
+		this.discount = discount;
 	}
 
 }

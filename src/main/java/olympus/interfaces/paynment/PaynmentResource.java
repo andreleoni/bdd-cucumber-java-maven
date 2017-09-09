@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import olympus.domain.advertisement.Advertisement;
-import olympus.domain.advertisement.AccountBalanceInformation;
-import olympus.domain.advertisement.service.AccountBalanceService;
-import olympus.domain.advertisement.service.AccountCreatorService;
+import olympus.domain.advertisement.service.AdvertisementRequirementsService;
 import olympus.domain.paynment.service.PaynmentBankSlipService;
 
 @RestController

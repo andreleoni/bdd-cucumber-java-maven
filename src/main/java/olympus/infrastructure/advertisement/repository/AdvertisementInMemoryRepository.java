@@ -10,7 +10,7 @@ import olympus.domain.advertisement.Advertisement;
 
 @Component
 @Qualifier("inMemory")
-public class AccountInMemoryRepository  {
+public class AdvertisementInMemoryRepository  {
 
 	private Map<Long, Advertisement> advertisements;
 
@@ -23,7 +23,7 @@ public class AccountInMemoryRepository  {
 			advertisements = new HashMap<>();
 		}
 
-		advertisements.put(advertisement.getNumber(), advertisement);
+		advertisements.put(advertisement.getAdvertisementId(), advertisement);
 		
 		return advertisement;
 	}

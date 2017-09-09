@@ -19,7 +19,7 @@ public class TransactionsProcessDef {
 	@Mock
 	private PaynmentRepository repository;
 
-	private List<Paynment> transactions;
+	private List<Paynment> paynment;
 
 	private Advertisement advertisement;
 
@@ -46,13 +46,8 @@ public class TransactionsProcessDef {
 //		resultantAmount = this.transactionsService.getAmountAfterProcessTransactions(0.0, transactions, advertisement);
 	}
 
-	@Entao("^reserva do ticket, será cancelada$")
+	@Entao("^a reserva do ticket, será cancelada e o cliente receberá notificação de que a reserva foi cancelada$")
 	public void assertThat() {
-		Assert.assertEquals(true, true);
-	}
-	
-	@E("^o cliente receberá notificação de que a reserva foi cancelada$")
-	public void andAssertThat() {
 		Assert.assertEquals(true, true);
 	}
 }
