@@ -13,14 +13,14 @@ public class Ticket {
 	private Long ticketId;
 
 	@Column
-	private Date dateDeparture;
+	private String dateDeparture;
 	
 	@Column
-	private Date dateReturn;
+	private String dateReturn;
 
 	public Ticket() {}
 
-	public Ticket(Long ticketId, Date dateDeparture, Date dateReturn) {
+	public Ticket(Long ticketId, String dateDeparture, String dateReturn) {
 		super();
 		this.ticketId = ticketId;
 		this.dateDeparture = dateDeparture;
@@ -35,19 +35,19 @@ public class Ticket {
 		this.ticketId = getTicketId;
 	}
 
-	public Date getDateDeparture() {
+	public String getDateDeparture() {
 		return dateDeparture;
 	}
 
-	public void setDateDeparture(Date dateDeparture) {
+	public void setDateDeparture(String dateDeparture) {
 		this.dateDeparture = dateDeparture;
 	}
 	
-	public Date getDateReturn() {
+	public String getDateReturn() {
 		return dateReturn;
 	}
 	
-	public void setDateReturn(Date dateReturn) {
+	public void setDateReturn(String dateReturn) {
 		this.dateReturn = dateReturn;
 	}
 }

@@ -1,7 +1,7 @@
 Feature: Criação de ticket    
     	
   Scenario: "Deve receber mensagem de que a data é inválida"
-    Given informo data de chegada inferior a data de partida,
+    Given informo data de chegada inferior a data de partida
       | ticketId | dateDeparture    | dateReturn   |
       | 1        | 01/01/2017       | 01/12/2016   |      
 	When clico em comprar passagem

@@ -1,5 +1,9 @@
 package olympus.application.ticket;
 
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import olympus.domain.ticket.InvalidTicketException;
 import olympus.domain.ticket.Ticket;
 import olympus.domain.ticket.repository.TicketCreatorRepository;
@@ -14,19 +18,31 @@ public class TicketCreatorServiceImpl implements TicketCreatorService {
 	}
 
 	@Override
-	public Ticket create(Ticket ticket) throws InvalidTicketException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public Ticket create(Ticket ticket) throws InvalidTicketException {		
+		String d = ticket.getDateDeparture();
+		String r = ticket.getDateReturn();
 
-//	@Override
-//	public Double getAmountAfterProcessTransactions(Double startingAmount, List<Transaction> transactions,
-//			Advertisement advertisement) {
-//		Double totalAmount = startingAmount; 
-//		for (Transaction transaction : transactions) {
-//			totalAmount += transaction.getAmount();
-//		}
-//		return totalAmount;		
-//	}
-
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+		Date dateDeparture = null;
+		try {
+			dateDeparture = new Date(format.parse(d).getTime());
+		} catch (ParseException e) {			
+			e.printStackTrace();
+		}
+		
+		Date dateReturn = null;
+		try {
+			dateReturn = new Date(format.parse(r).getTime());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		if (dateDeparture == null) {		
+			throw new InvalidTicketException("Data de partida não pode ficar em branco");		
+ 		} else if (dateDeparture.after(dateReturn)) {		
+ 			throw new InvalidTicketException("Data de partida nao pode ser superior a data de retorno"); 		
+ 		}
+		
+	 	return repository.saveAndFlush(ticket);		
+ 	}
 }
