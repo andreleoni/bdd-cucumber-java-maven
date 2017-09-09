@@ -8,7 +8,7 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import olympus.application.payment.TransactionsServiceImpl;
+import olympus.application.paynment.TransactionsServiceImpl;
 import olympus.domain.advertisement.Advertisement;
 import olympus.domain.transaction.Transaction;
 import olympus.domain.transaction.TransactionsService;

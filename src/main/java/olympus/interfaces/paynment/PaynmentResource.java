@@ -1,4 +1,4 @@
-package olympus.interfaces.payment;
+package olympus.interfaces.paynment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,29 +13,28 @@ import olympus.domain.advertisement.Advertisement;
 import olympus.domain.advertisement.AccountBalanceInformation;
 import olympus.domain.advertisement.service.AccountBalanceService;
 import olympus.domain.advertisement.service.AccountCreatorService;
+import olympus.domain.paynment.service.PaynmentBankSlipService;
 
 @RestController
-@RequestMapping("/account")
-public class AccountResource {
+@RequestMapping("/payment")
+public class PaynmentResource {
 
-	private AccountBalanceService balanceService;
-	private AccountCreatorService creatorService;
+	private PaynmentBankSlipService paynmentBankSlipService;
 
 	@Autowired
-	public AccountResource(AccountBalanceService balanceService, AccountCreatorService creatorService) {
-		this.balanceService = balanceService;
-		this.creatorService = creatorService;
+	public PaynmentResource(PaynmentBankSlipService paynmentBankSlipService) {
+		this.paynmentBankSlipService = paynmentBankSlipService;
 	}
 
 	@GetMapping
-	@RequestMapping(method = RequestMethod.GET, path = "/{accountNumber}")
-	public AccountBalanceInformation getBalanceBy(@PathVariable("accountNumber") Long accountNumber) {
+	@RequestMapping(method = RequestMethod.GET, path = "/paynment")
+	public PaynmentBankSlipService getBalanceBy() {
 
 		return null;
 	}
 
 	@PostMapping
-	public AccountBalanceInformation insert(@RequestBody Advertisement advertisement) {
+	public PaynmentBankSlipService insert() {
 		
 		return null;
 	}
