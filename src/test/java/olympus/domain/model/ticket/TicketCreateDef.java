@@ -15,29 +15,29 @@ import olympus.domain.advertisement.repository.AccountRepository;
 public class TicketCreateDef {
 	int cucumbers;
 
-	private AccountCreatorServiceImpl service;
+	private TicketCreatorServiceImpl service;
 
 	@Mock
-	private AccountRepository repository;
+	private TicketRepository repository;
 
-	private Advertisement advertisement;
+	private Ticket ticket;
 
-	@Dado("^uma conta (\\d+) de nome \"([^\"]*)\"$")
-	public void setup(Long number, String name) throws Throwable {
-		this.advertisement = new Advertisement(number, name);
-
-		MockitoAnnotations.initMocks(this);
-		this.service = new AccountCreatorServiceImpl(repository);
+	@Dado("^informo data de chegada inferior a data de partida$")
+	public void setup() throws Throwable {
+//		this.advertisement = new Advertisement(number, name);
+//
+//		MockitoAnnotations.initMocks(this);
+//		this.service = new AccountCreatorServiceImpl(repository);
 	}
 
-	@Quando("^eu clico em criar conta$")
+	@Quando("^clico em comprar passagem$")
 	public void click() throws Throwable {
-		this.service.create(advertisement);
+//		this.service.create(advertisement);
 	}
 
-	@Entao("^uma conta de número (\\d+) com o nome \"([^\"]*)\" e com o saldo (\\d+) deve ter sido criada$")
-	public void assertThat(Long number, String name, Double balance) {
-		Mockito.verify(repository, VerificationModeFactory.only()).saveAndFlush(advertisement);
+	@Entao("^recebo mensagem de que a data é inválida  $")
+	public void assertThat() {
+//		Mockito.verify(repository, VerificationModeFactory.only()).saveAndFlush(advertisement);
 	}
 
 }

@@ -2,22 +2,22 @@ package olympus.domain.ticket;
 
 public class AccountBalanceInformation {
 
-	private Account account;
+	private Ticket ticket;
 
 	private Double balance;
 	
-	public AccountBalanceInformation(Account account, Double balance) {
+	public AccountBalanceInformation(Ticket ticket, Double balance) {
 		super();
-		this.account = account;
+		this.ticket = ticket;
 		this.balance = balance;
 	}
 
-	public Account getAccount() {
-		return account;
+	public Ticket getAccount() {
+		return ticket;
 	}
 
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setAccount(Ticket ticket) {
+		this.ticket = ticket;
 	}
 
 	public Double getBalance() {

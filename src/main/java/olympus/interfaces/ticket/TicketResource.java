@@ -1,4 +1,4 @@
-package olympus.interfaces.account;
+package olympus.interfaces.ticket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,30 +13,27 @@ import olympus.domain.advertisement.Advertisement;
 import olympus.domain.advertisement.AccountBalanceInformation;
 import olympus.domain.advertisement.service.AccountBalanceService;
 import olympus.domain.advertisement.service.AccountCreatorService;
+import olympus.domain.ticket.service.TicketCreatorService;
 
 @RestController
-@RequestMapping("/account")
-public class AccountResource {
+@RequestMapping("/ticket")
+public class TicketResource {
 
-	private AccountBalanceService balanceService;
-	private AccountCreatorService creatorService;
+	private TicketCreatorService creatorService;
 
 	@Autowired
-	public AccountResource(AccountBalanceService balanceService, AccountCreatorService creatorService) {
-		this.balanceService = balanceService;
+	public TicketResource(TicketCreatorService creatorService) {
 		this.creatorService = creatorService;
 	}
 
 	@GetMapping
-	@RequestMapping(method = RequestMethod.GET, path = "/{accountNumber}")
-	public AccountBalanceInformation getBalanceBy(@PathVariable("accountNumber") Long accountNumber) {
-
+	@RequestMapping(method = RequestMethod.POST, path = "/ticket")
+	public TicketCreatorService create() {
 		return null;
 	}
 
 	@PostMapping
-	public AccountBalanceInformation insert(@RequestBody Advertisement advertisement) {
-		
+	public TicketCreatorService insert() {
 		return null;
 	}
 }
