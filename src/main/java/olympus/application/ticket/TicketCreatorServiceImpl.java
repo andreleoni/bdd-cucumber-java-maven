@@ -22,7 +22,7 @@ public class TicketCreatorServiceImpl implements TicketCreatorService {
 		String d = ticket.getDateDeparture();
 		String r = ticket.getDateReturn();
 
-		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateDeparture = null;
 		try {
 			dateDeparture = new Date(format.parse(d).getTime());
